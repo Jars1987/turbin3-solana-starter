@@ -24,14 +24,14 @@ const to = new PublicKey('<receiver address>');
 (async () => {
   try {
     // Get the token account of the fromWallet address, and if it does not exist, create it
-    const fromTokenAccount = await getOrCreateAssociatedTokenAccount(
+    const fromAccount = await getOrCreateAssociatedTokenAccount(
       connection,
       keypair,
       mint,
       keypair.publicKey
     );
     // Get the token account of the toWallet address, and if it does not exist, create it
-    const toTokenAccount = await getOrCreateAssociatedTokenAccount(
+    const toAccount = await getOrCreateAssociatedTokenAccount(
       connection,
       keypair,
       mint,
@@ -42,8 +42,8 @@ const to = new PublicKey('<receiver address>');
     const transferSig = await transfer(
       connection,
       keypair,
-      fromTokenAccount.address,
-      toTokenAccount.address,
+      fromAccount.address,
+      toAccount.address,
       keypair.publicKey,
       Number(1_000_000n)
     );

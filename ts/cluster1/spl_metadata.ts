@@ -43,7 +43,7 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
     };
     let args: CreateMetadataAccountV3InstructionArgs = {
       data,
-      isMutable: true,
+      isMutable: false,
       collectionDetails: null,
     };
     let tx = createMetadataAccountV3(umi, {
