@@ -28,8 +28,8 @@ const mint = generateSigner(umi);
     mint, //nftSigner
     name: 'Turbin3 Test Token',
     symbol: 'TTT', //not mandatory
-    uri: '', //get this from running nft_metadata.ts and getting the link
-    sellerFeeBasisPoints: percentAmount(0, 2),
+    uri: 'https://devnet.irys.xyz/6TFey1FZTAmWzZcWnUaou9Q6yrp9HXkV65cgzg1mBbkq', //get this from running nft_metadata.ts and getting the link
+    sellerFeeBasisPoints: percentAmount(10),
   });
   let result = await tx.sendAndConfirm(umi);
   const signature = base58.encode(result.signature);
@@ -47,4 +47,6 @@ Minting the NFT process
 2- Build the metadata JSON structure and upload it to get the metadata URI
 3- Mint the NFT using the createNFT function (pass umi and then an object with the mint, name, symbol, uri, and sellerFeeBasisPoints)
 Check Metaplex docs for more info
+
+
 */

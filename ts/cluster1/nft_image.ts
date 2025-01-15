@@ -20,13 +20,13 @@ umi.use(signerIdentity(signer));
 (async () => {
   try {
     //1. Load image
-    const image = await readFile('../assets/rug.jpg');
+    const image = await readFile('./assets/generug.png');
     //2. Convert image to generic file. available on metaplex docs
-    const genericFile = await createGenericFile(image, 'rug/jpeg', {
-      tags: [{ name: 'Content-Type', value: 'image/png' }],
+    const genericFile = await createGenericFile(image, 'bigrug.jpeg', {
+      tags: [{ name: 'Content-Type', value: 'image/jpg' }],
     });
     //3. Upload image
-    // const image = ???   <---- should this be here?
+
     const [myUri] = await umi.uploader.upload([genericFile]);
     console.log('Your image URI: ', myUri);
   } catch (error) {

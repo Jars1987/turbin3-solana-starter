@@ -56,7 +56,7 @@ const vault = PublicKey.findProgramAddressSync(
 (async () => {
   try {
     const signature = await program.methods
-      .deposit(new BN(10000))
+      .deposit(new BN(1000000000)) //lamports depoisiting
       .accounts({
         owner: keypair.publicKey,
         vaultState,
@@ -73,3 +73,5 @@ const vault = PublicKey.findProgramAddressSync(
     console.error(`Oops, something went wrong: ${e}`);
   }
 })();
+
+// https://explorer.solana.com/tx/3LpzCm3jSTVeChzRs3s9BEeqQmopas8ooH6UJ3xhkG7gc4qy1UzUDPsU8nqATMCfqaKiSZniHwpPQPEfjHuJdYLq?cluster=devnet

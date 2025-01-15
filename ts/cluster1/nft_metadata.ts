@@ -20,31 +20,34 @@ umi.use(signerIdentity(signer));
   try {
     // Follow this JSON structure
     // https://docs.metaplex.com/programs/token-metadata/changelog/v1.0#json-structure
-    // const image = ???   //Get this link from running nft_image.ts
-    // const metadata = {
-    //     name: "jars1987",
-    //     symbol: "?JARS",
-    //     description: "NFT for Turbin3",
-    //     image: image,
-    //     attributes: [
-    //         {trait_type: 'trait', value: 'value'}
-    //     ],
-    //     properties: {
-    //         files: [
-    //             {
-    //                 type: "image/png",
-    //                 uri: image,
-    //             },
-    //         ]
-    //     },
-    //     creators: [
-    //         {
-    //          address: keypair.publicKey
-    //          share: 100,
-    //         }]
-    // };
-    // const myUri = await umi.uploader.uploadJson(metadata);
-    // console.log("Your metadata URI: ", myUri);
+    const image =
+      'https://devnet.irys.xyz/DrL3qer3wGcy6ANvCwraxiJSnDghhwtRLHSDFZmUBTeG';
+    const metadata = {
+      name: 'jars1987',
+      symbol: 'JARS',
+      description: 'NFT for Turbin3',
+      image: image,
+      attributes: [
+        { trait_type: 'strength', value: '10' },
+        { trait_type: 'defence', value: '2' },
+      ],
+      properties: {
+        files: [
+          {
+            type: 'image/png',
+            uri: image,
+          },
+        ],
+      },
+      creators: [
+        {
+          address: keypair.publicKey,
+          share: 100,
+        },
+      ],
+    };
+    const myUri = await umi.uploader.uploadJson(metadata);
+    console.log('Your metadata URI: ', myUri);
   } catch (error) {
     console.log('Oops.. Something went wrong', error);
   }

@@ -37,7 +37,9 @@ const provider = new AnchorProvider(connection, new Wallet(keypair), {
 const program = new Program<WbaVault>(IDL, '<address>' as Address, provider);
 
 // Create a random keypair
-const vaultState = new PublicKey('<address>');
+const vaultState = new PublicKey(
+  'BTa6Pw32KUBPWCetvLerSpU82RBUNmr2cezeMsWByaSn'
+); //the vault state you created
 
 // Create the PDA for our enrollment account
 // const vaultAuth = ???
@@ -48,7 +50,7 @@ const vaultState = new PublicKey('<address>');
 // const token_decimals = ???
 
 // Mint address
-const mint = new PublicKey('<address>');
+const mint = new PublicKey('5a3UUtHNrNwvKNVVd8Snr6f8AkmDh4wsVEC6jRLSQGcX'); //the spl token you created
 
 // Execute our enrollment transaction
 (async () => {

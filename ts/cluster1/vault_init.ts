@@ -37,20 +37,10 @@ console.log(`Vault public key: ${vaultState.publicKey.toBase58()}`);
 
 // Create the PDA for our enrollment account
 // Seeds are "auth", vaultState
-
-const [vaultAuth, bump] = PublicKey.findProgramAddressSync(
-  [Buffer.from('auth'), vaultState.publicKey.toBuffer()],
-  program.programId
-);
-
-/*
-alternative:
 const vaultAuth = PublicKey.findProgramAddressSync(
   [Buffer.from('auth'), vaultState.publicKey.toBuffer()],
   program.programId
-)[0] // the public key;
-
-*/
+)[0];
 
 // Create the vault key
 // Seeds are "vault", vaultAuth
@@ -60,19 +50,16 @@ const vault = PublicKey.findProgramAddressSync(
 )[0];
 
 // Execute our enrollment transaction
-// 1) check IDL for the Accounts passed in the initialize instruction
-
-//did not pass all the accounts because anchor will automatically pass owner (its the first signer)
-//and will pass the vault because it is a derived address from the vaultAuth
-//Since we already passed the vaultAuth and the IDL has seeds for vaultAuth, anchor will automatically pass the vault
-
 (async () => {
   try {
     const signature = await program.methods
       .initialize()
       .accounts({
+        owner: keypair.publicKey,
         vaultState: vaultState.publicKey,
-        vaultAuth: vaultAuth,
+        vaultAuth,
+        vault,
+        systemProgram: SystemProgram.programId,
       })
       .signers([keypair, vaultState])
       .rpc();
