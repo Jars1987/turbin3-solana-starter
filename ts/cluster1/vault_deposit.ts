@@ -13,7 +13,7 @@ import {
   BN,
 } from '@coral-xyz/anchor';
 import { WbaVault, IDL } from './programs/wba_vault';
-import wallet from '../../keypair.json';
+import wallet from '../keypair.json';
 
 // Import our keypair from the wallet file
 const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));

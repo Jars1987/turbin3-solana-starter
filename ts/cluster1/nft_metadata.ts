@@ -1,4 +1,4 @@
-import wallet from '../../keypair.json';
+import wallet from '../keypair.json';
 import { createUmi } from '@metaplex-foundation/umi-bundle-defaults';
 import {
   createGenericFile,

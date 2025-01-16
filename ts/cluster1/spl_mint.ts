@@ -1,6 +1,6 @@
 import { Keypair, PublicKey, Connection, Commitment } from '@solana/web3.js';
 import { getOrCreateAssociatedTokenAccount, mintTo } from '@solana/spl-token';
-import wallet from '../../keypair.json';
+import wallet from '../keypair.json';
 
 // Import our keypair from the wallet file
 const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
