@@ -38,7 +38,7 @@ const program = new Program<WbaVault>(
 
 // Create a random keypair
 const vaultState = new PublicKey(
-  'BTa6Pw32KUBPWCetvLerSpU82RBUNmr2cezeMsWByaSn'
+  '41oQe5XveWZx6LxopvxNGKxu8xEDY6JqoDeN69jppr8T'
 );
 // Create the PDA for our enrollment account
 const vaultAuth = PublicKey.findProgramAddressSync(
