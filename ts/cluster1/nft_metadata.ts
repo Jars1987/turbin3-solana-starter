@@ -21,7 +21,7 @@ umi.use(signerIdentity(signer));
     // Follow this JSON structure
     // https://docs.metaplex.com/programs/token-metadata/changelog/v1.0#json-structure
     const image =
-      'https://devnet.irys.xyz/DrL3qer3wGcy6ANvCwraxiJSnDghhwtRLHSDFZmUBTeG';
+      'https://devnet.irys.xyz/BNJBAu3UK5Ncieq4AxajWo2gmooG9GHv6MWgLLqLuXC2';
     const metadata = {
       name: 'jars1987',
       symbol: 'JARS',
@@ -52,3 +52,5 @@ umi.use(signerIdentity(signer));
     console.log('Oops.. Something went wrong', error);
   }
 })();
+
+//https://arweave.net/DnGqFXSNNCYCHXtAnFmpKmGZurZP1Shd4KbxLtEcPWTV

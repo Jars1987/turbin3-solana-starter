@@ -28,7 +28,7 @@ const mint = generateSigner(umi);
     mint, //nftSigner
     name: 'Turbin3 Test Token',
     symbol: 'TTT', //not mandatory
-    uri: 'https://devnet.irys.xyz/6TFey1FZTAmWzZcWnUaou9Q6yrp9HXkV65cgzg1mBbkq', //get this from running nft_metadata.ts and getting the link
+    uri: 'https://devnet.irys.xyz/DnGqFXSNNCYCHXtAnFmpKmGZurZP1Shd4KbxLtEcPWTV', //get this from running nft_metadata.ts and getting the link
     sellerFeeBasisPoints: percentAmount(10),
   });
   let result = await tx.sendAndConfirm(umi);
@@ -48,5 +48,6 @@ Minting the NFT process
 3- Mint the NFT using the createNFT function (pass umi and then an object with the mint, name, symbol, uri, and sellerFeeBasisPoints)
 Check Metaplex docs for more info
 
-
+//https://explorer.solana.com/tx/jbZ7odYkw95HMJmuHAKQ2hWpCwAhQSmeXj3PEKdQkzyLgxDEzifKFBUrU4GphgP6MTWPaEn7sz7Pwca6kMqbqrV?cluster=devnet
+//mint address: AE1rrd19g79MnyP1YyfritjuE51mch45WZSJFmDx2kpG
 */
